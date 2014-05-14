@@ -23,4 +23,4 @@ class ServiceMessage(object):
 
     @staticmethod
     def loads(msg):
-        return msgpack.unpackb(msg)
+        return msgpack.unpackb(msg, use_list=False)

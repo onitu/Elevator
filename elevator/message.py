@@ -36,7 +36,7 @@ class Request(object):
     }
     """
     def __init__(self, raw_message):
-        self.message = msgpack.unpackb(raw_message)
+        self.message = msgpack.unpackb(raw_message, use_list=False)
         self.meta = self.message.get('meta', {})
         activity_logger.debug('<Request ' + str(self.message) + '>')
 
